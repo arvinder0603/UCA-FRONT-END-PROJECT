@@ -1,16 +1,159 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body>
-    <div class="">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter&display=swap');
 
-          
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .signup {
+            background-image: linear-gradient(to top, #cc208e 0%, #6713d2 100%);
+        }
+
+        .maini {
+            font-family: 'Archivo Black', sans-serif;
+        }
+    </style>
+
+
+</head>
+
+<body
+    class="bg-[url('https://github.com/arvinder0603/UCA-FRONT-END-PROJECT/blob/main/Assets/Shot.png?raw=true')]  bg-cover text-white bg-no-repeat ">
+    <div
+        class="bg-[url('https://raw.githubusercontent.com/arvinder0603/UCA-FRONT-END-PROJECT/main/Assets/Group%20222.png')] bg-cover">
+        <!-- NAVBAR -->
+        <nav class="m-6 flex flex-row justify-around  ">
+            <div class="font-semibold">
+                <h1 class="text-[20px]">CRYPTOS</h1>
+            </div>
+
+            <ul class="lg:flex hidden  gap-4 text-[13px] text-center justify-between mt-2">
+                <li>HOME</li>
+                <li>CRYPTO</li>
+                <li>SUPPORT</li>
+            </ul>
+
+            <div class="flex gap-4">
+                <button
+                    class="text-[12px] hover:bg-white hover:text-black   rounded-xl outline outline-offset-3 h-[30px] w-[60px]">
+                    Sign in
+                </button>
+                <button class="text-[12px]  rounded-xl  h-[30px] w-[60px] signup">
+                    Signup
+                </button>
+            </div>
+        </nav>
+
+        <!-- LANDPAGE TEXT -->
+        <div class="flex justify-center item-center    ">
+
+            <div class="flex justify-center mt-[150px] flex-col gap-7">
+                <h1 class="maini lg:text-[86px] text-[40px] text-center font-extrabold">We make crypto <br />
+                    clear and simple
+                </h1>
+                <h1 class="text-center font-extralight text-[13px]">Book, learn and grow with Cryptos,the platform
+                    dedicated <br /> <span class="text-center">to every trader at every level.</span></h1>
+                <div class="flex justify-center">
+                    <button class="signup w-[100px] h-[40px] rounded-lg"><a href="../HTML/Curr.html"></a>Get
+                        started</button>
+
+                </div>
+            </div>
+
+        </div>
+
+
+
+        <!-- LANDPAGE BOXES -->
+        <div class="flex justify-center  ">
+
+
+            <div class="mt-[60px] flex ">
+
+
+
+
+                <!-- box1 -->
+                <div class="flex justify-center">
+                    <div class="bg-[#1A1B23] h-[220px] w-[230px] rounded-xl flex  flex-col m-6 shadow-2xl">
+
+                        <div class="flex justify-center">
+                            <img src="../Assets/img.png" class="h-[60px] w-[60px] m-3" alt="/" />
+                        </div>
+                        <h1 class="text-bold lg:text-[20px] text-center">Trade Desk</h1>
+
+                        <p class="text-[10px] text-center font-extralight text-gray-400">
+                            Invest in crypto anytime, anywhere <br /> with our safe, secure, and easy to <br />use
+                            online platform
+                        </p>
+
+                        <a class="text-[#B982FF] text-center text-[14px] mt-5">Get started</a>
+                    </div>
+                </div>
+
+
+
+
+                <!-- box2 -->
+                <div class="flex justify-center">
+                    <div class="bg-[#1A1B23] h-[220px] w-[230px] rounded-xl flex  flex-col m-6 shadow-2xl">
+
+                        <div class="flex justify-center">
+                            <img src="../Assets/img.png" class="h-[60px] w-[60px] m-3" alt="/" />
+                        </div>
+                        <h1 class="text-bold lg:text-[20px] text-center">Trade Desk</h1>
+
+                        <p class="text-[10px] text-center font-extralight text-gray-400">
+                            Invest in crypto anytime, anywhere <br /> with our safe, secure, and easy to <br />use
+                            online platform
+                        </p>
+
+                        <a class="text-[#B982FF] text-center text-[14px] mt-5">Get started</a>
+                    </div>
+                </div>
+
+
+
+
+                <!-- box3 -->
+                <div class="flex justify-center">
+                    <div class="bg-[#1A1B23] h-[220px] w-[230px] rounded-xl flex  flex-col m-6 shadow-2xl">
+
+                        <div class="flex justify-center">
+                            <img src="../Assets/img.png" class="h-[60px] w-[60px] m-3" alt="/" />
+                        </div>
+                        <h1 class="text-bold lg:text-[20px] text-center">Trade Desk</h1>
+
+                        <p class="text-[10px] text-center font-extralight text-gray-400">
+                            Invest in crypto anytime, anywhere <br /> with our safe, secure, and easy to <br />use
+                            online platform
+                        </p>
+
+                        <a class="text-[#B982FF] text-center text-[14px] mt-5">Get started</a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    
+
+    <div class="grid lg:grid-cols-2 bg-gradient-to-br from-black via-black to-gray-700">
+        <div>
+            <img src="../Assets/bgimag.png" alt="/">
+        </div>
+        <div class="flex justify-center item-center mt-[250px]">
+            <h1 class="text-[45px] text-center font-extrabold">A crypto investment learning platform <br />
+                where you invest your time
+            </h1>
+        </div>
+    </div>
 </body>
+
 </html>
