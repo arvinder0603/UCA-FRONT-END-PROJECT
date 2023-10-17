@@ -1,0 +1,88 @@
+
+.card {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: auto;
+    border-radius: 5px;
+
+}
+
+  body{
+    background-color: #2d3436;
+background-image: linear-gradient(315deg, #2d3436 0%, #000000 74%);
+  }
+.name {
+    font-size: 1.5em;
+    margin-bottom: 5px;
+}
+
+.price {
+   font-weight: 700;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.coin-image {
+    height: 100px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+
+}
+
+.coin-imagess {
+    height: 100px;
+    width: 200px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+
+}
+
+button {
+    
+    border-radius: 6px;
+    font-size: x-large;
+    font-weight: 700;
+    height: 40px;
+    width: 110px;
+    
+    font-weight: 500;
+    box-shadow: 4px 1px 37px 0px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 4px 1px 37px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 4px 1px 37px 0px rgba(0,0,0,0.75);
+}
+
+.rank{
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+#tt{
+    
+  color: #704c60; background-image: -webkit-linear-gradient(45deg, #704c60 0%, #512fba 33%, #ca398d 67%); background-clip: text; -webkit-background-clip: text; text-fill-color: transparent; -webkit-text-fill-color: transparent;
+  text-shadow: #512fba;
+
+}
+
+
+.Pcard{
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: auto;
+    border-radius: 5px;
+  
+
+
+}
+.Btn{
+  
+    margin: 10px;
+}
+
+

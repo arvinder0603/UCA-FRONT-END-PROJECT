@@ -6,179 +6,83 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        .card {
-            border: 1px solid #ccc;
-            padding: 10px;
-            margin: 10px;
-            background-color: #fff;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            width: auto;
-            border-radius: 5px;
+    <link rel="stylesheet" href="../CSS/curr.css">
 
-        }
-
-          body{
-            background-color: #2d3436;
-background-image: linear-gradient(315deg, #2d3436 0%, #000000 74%);
-          }
-        .name {
-            font-size: 1.5em;
-            margin-bottom: 5px;
-        }
-
-        .price {
-           font-weight: 700;
-            font-size: 13px;
-            font-weight: 500;
-        }
-
-        .coin-image {
-            height: 100px;
-            align-items: center;
-            display: flex;
-            justify-content: center;
-
-        }
-
-        .coin-imagess {
-            height: 100px;
-            width: 200px;
-            align-items: center;
-            display: flex;
-            justify-content: center;
-
-        }
-
-        button {
-            
-            border-radius: 6px;
-            font-size: x-large;
-            font-weight: 700;
-            height: 40px;
-            width: 110px;
-            
-            font-weight: 500;
-            box-shadow: 4px 1px 37px 0px rgba(0,0,0,0.75);
-            -webkit-box-shadow: 4px 1px 37px 0px rgba(0,0,0,0.75);
-            -moz-box-shadow: 4px 1px 37px 0px rgba(0,0,0,0.75);
-        }
-
-        .rank{
-            font-weight: 700;
-            margin-bottom: 6px;
-        }
-        #tt{
-            
-          color: #704c60; background-image: -webkit-linear-gradient(45deg, #704c60 0%, #512fba 33%, #ca398d 67%); background-clip: text; -webkit-background-clip: text; text-fill-color: transparent; -webkit-text-fill-color: transparent;
-          text-shadow: #512fba;
-        
-        }
-
-        
-        .Pcard{
-            border: 1px solid #ccc;
-            padding: 10px;
-            margin: 10px;
-            background-color: #fff;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            width: auto;
-            border-radius: 5px;
-          
-
-
-        }
-        .Btn{
-            /* background: #000;
-            color: #FB2576;
-            box-shadow: #FB2576;
-            box-shadow: 5px 4px 4px 5px; */
-            margin: 10px;
-        }
-
-        
-    </style>
 </head>
 
-<body class="  " >
+<body>
 
-  
-
-    <div >
-
+    <div>
+            <!-- Navbar  -->
         <nav class="m-6 main flex flex-row justify-around  text-white ">
-            <div  id="main" class="font-semibold">
-                <h1 class="text-[30px] font-extrabold">CRYPTOS</h1>
+            <div id="main" class="font-semibold">
+                <h1 class="lg:text-[30px] text-[20px] font-extrabold">CRYPTOS</h1>
             </div>
 
             <ul class="lg:flex   gap-4 text-[15px] text-center justify-between mt-2">
                 <a href="./analysis.html">
-                    <button class="outline outline-3 h-[30px]">
+                    <button class="outline outline-3 h-[30px] lg:mt-0 mt-12 ">
                         Analysis
                     </button>
                 </a>
             </ul>
 
             <div class="flex gap-4 m-3">
-                <button id="watchButton" class="text-[12px] hover:bg-white hover:text-black rounded-xl outline outline-offset-3 h-[30px] w-[60px]">
+                <button id="watchButton"
+                    class="text-[12px] hover:bg-white hover:text-black rounded-xl outline outline-offset-3 h-[30px] w-[60px]">
                     Watch
                 </button>
 
                 <a href="./index.html">
-                    <button id="watchButton" class="text-[12px] hover:bg-white hover:text-black rounded-xl outline outline-offset-3 h-[30px] w-[60px]">
-                    Home
+                    <button id="watchButton"
+                        class="text-[12px] hover:bg-white hover:text-black rounded-xl outline outline-offset-3 h-[30px] w-[60px]">
+                        Home
                     </button>
                 </a>
-               
-                
-                
+
+
+
             </div>
         </nav>
 
 
+
+        <!-- here we have fetched data from Local Storage and Use js to create elements and append here  -->
         <div class="flex justify-center item-center flex-col gap-4">
-            <h1 id="tt" class="lg:text-[80px] text-[50px] font-extrabold text-center mt-32">Practice, Learn and Grow</h1>
-     
-             <h1 class="text-gray-200 text-[40px] text-center font-semibold">Top 50 coins  </h1>
+        <h1 id="tt" class="lg:text-[80px] text-[50px] font-extrabold text-center mt-32">Practice, Learn and Grow
+        
+        </h1>
+        <h1 class="text-gray-200 text-[40px] text-center font-semibold">Top 50 coins </h1>
 
-
-            <div id="block" class="grid lg:grid-cols-5 grid-cols-2  ">
-
-                <div>
-                    <div class="card">
-                        <img class="coin-image" src="" alt="Coin Image">
-                        <h1 class="name"></h1>
-                        <h1 class="price"></h1>
-                        <h1 class="rank" > </h1>
-        
-        
-                    </div>
-        
-                </div>
-        
-        
-        
+        <h1 class="text-white text-center text-[16px] font-extrabold ">Here are top 50 crypto coins for learning
+            
+        </h1>
+        <div id="block" class="grid lg:grid-cols-5 grid-cols-2  ">
+            
             </div>
         </div>
-        
-      <div class="">
 
-      
-        <h1 class="text-[40px] text-white text-center font-extrabold">Your Watch List</h1>
-       
-        <div class="flex justify-center m-6 justify-around">
-            <button id="showPersonalDataButton" class="box shadow-2xl  bg-white h-[60px] w-[200px]">Show Personal Data</button>
-             <button  class="box shadow-2xl  bg-white h-[60px] w-[200px]" id="top">Top</button>
-        </div>
-        <h1 class="text-[20px] mt-12 font-light text-center text-white mb-12">Data under is fixed by you at particular price which was when you booked it</h1>
-        <div id="Pdivs" class="grid lg:grid-cols-3 gap-12 item-center bg-[#040D12]">
-           
+
+
+
+
+        <!-- we have used this part to show the data that we have booked as Personal Data -->
+        <div class="">
+            <h1 class="text-[40px] text-white text-center font-extrabold">Your Watch List</h1>
+
+            <div class="flex justify-center m-6 justify-around">
+                <button id="showPersonalDataButton" class="box shadow-2xl  bg-white h-[60px] w-[200px]">Show Personal
+                    Data</button>
+                <button class="box shadow-2xl  bg-white h-[60px] w-[200px]" id="top">Top</button>
+            </div>
+            <h1 class="text-[20px] mt-12 font-light text-center text-white mb-12">Data under is fixed by you at
+                particular price which was when you booked it</h1>
+            <div id="Pdivs" class="grid lg:grid-cols-3 gap-12 item-center bg-[#040D12]">
+
+            </div>
          </div>
-         
-       
 
     </div>
-        </div>
 
 
 

@@ -1,13 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
 
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <link rel="stylesheet" href="../CSS/analysis.css">
 </head>
-<body>
-    <h1>mnsd</h1>
+ 
+ 
+ 
+<body class=" bg-cover bg-[url('https://raw.githubusercontent.com/arvinder0603/IMaGES-DATA/main/Group%20(1).png')] ">
+
+  
+    <!-- Introduction part -->
+    <div>
+        <h1 class="text-white text-center text-[65px] font-bold font-sarif mt-12">CRYPTOS</h1>
+        <h1 class="text-white text-center font-light">Book, learn and grow</h1>
+    </div>
+
+
+    <!-- This part is for redirecting  -->
+    <div class="flex gap-4 m-3 justify-center text-gray-200">
+        <a href="./Curr.html">
+            <button id="watchButton"
+            class="text-[12px]   hover:bg-white hover:text-black lg:w-[120px] w-[60px] rounded-xl lg:h-[50px] outline outline-offset-3 h-[30px] ">
+            Watch
+        </button>
+        </a>
+            
+        <a href="./index.html">
+            <button id="watchButton"
+                class="text-[12px] hover:bg-white hover:text-black rounded-xl outline outline-offset-3 lg:h-[50px] h-[30px] lg:w-[120px] w-[60px]">
+                Home
+            </button>
+        </a>
+        </div>
+
+        
+    <div class="">
+        <h1 class="text-center mt-20 text-[24px] text-white mb-[70px]">
+            Locked Price Vs Live Price
+        </h1>
+        <div class="flex justify-center  opacity-80 item-center">
+            <div class="mb-[200px] bg-black w-full  rounded-2xl  shadow-2xl" id="chart"></div>
+        </div>
+        <div class="flex justify-center">
+            <div class="mb-[200px] bg-black w-full  rounded-2xl  shadow-2xl" id="chartColumn"></div>
+        </div>
+    </div>
+
+
+
+    <!-- This part is used for chart purpose we have created div of ids so these ids are used in js to create charts -->
+    <h1 class="text-center text-[30px] text-gray-200 font-extrabold underline">Coins you have locked</h1>
+    <div class="flex justify-center mt-16">
+        <div id="block" class=" grid grid-cols-3 grid-rows-12 gap-7"></div>
+        
+
+        <!-- This part is used for the names of coines you have locked  -->
+        <div id="tooltip" class="tooltip"></div>
+
+    </div>
+
+
+
+
+    <script src="../JS/analysis.js"></script>
 </body>
+
 </html>

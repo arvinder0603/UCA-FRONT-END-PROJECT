@@ -1,0 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter&display=swap');
+
+* {
+    font-family: 'Inter', sans-serif;
+}
+
+.signup {
+    background-image: linear-gradient(to top, #cc208e 0%, #6713d2 100%);
+}
+
+.maini {
+    font-family: 'Archivo Black', sans-serif;
+}
