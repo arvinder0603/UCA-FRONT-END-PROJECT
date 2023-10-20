@@ -1,10 +1,18 @@
+// Function to save PersonalData to localStorage
+function saveToLocalStorage(data) {
+    localStorage.setItem('PersonalData', JSON.stringify(data));
+}
 
+// Function to retrieve PersonalData from localStorage
+function getFromLocalStorage() {
+    const data = localStorage.getItem('PersonalData');
+    return data ? JSON.parse(data) : [];
+}
 
-//Function Calling ->  data -> display -> SaveToLocalStorage -> pdataShow ->  deleteItemByName
-
-
-
-
+// Load PersonalData from localStorage on page load
+document.addEventListener('DOMContentLoaded', () => {
+    PersonalData = getFromLocalStorage();
+});
 
 //this is main function used for fetching data from rapid api 
 //Fetch method is used in this part for data fetching 
@@ -17,46 +25,12 @@ const options = {
     }
 };
 
-
-
-
-
-//this code is used  for Dom function scrollview this help us when we click on 
-//........watch button present on top of page this take to part of website where data from local storage is present
-document.addEventListener('DOMContentLoaded', function () {
-    document.getElementById('watchButton').addEventListener('click', function () {
-        document.getElementById('Pdivs').scrollIntoView({
-            behavior: 'smooth'
-        });
-    });
-});
-
-
-
-//Same goes with this fuction it takes us from bottom of page to top of the page
-document.addEventListener('DOMContentLoaded', function () {
-    document.getElementById('top').addEventListener('click', function () {
-        document.getElementById('main').scrollIntoView({
-            behavior: 'smooth'
-        });
-    });
-});
-
-
-
-
-
-
-
 // IN this function we create html elemments and give them class name and assign them value using map function 
 // we have a button in this function at last to add element to our local storage to lock the prices of coins.
-
 function display(data) {
     const mainDiv = document.getElementById('block');
 
-    data.forEach((coin,indx) => {
-
-      
+    data.forEach((coin, indx) => {
         const card = document.createElement("div");
         card.classList.add('card');
 
@@ -87,12 +61,15 @@ function display(data) {
         button.addEventListener('click', () => {
             const exists = PersonalData.some(item => item.Name === coin.name);
             if (!exists) {
+                const d = new Date(); // Get the current date and time
                 PersonalData.push({
                     "Name": coin.name,
                     "Price": coin.price,
                     "Rank": coin.rank,
                     "MarketCap": coin.marketCap,
-                    "IconUrl": coin.iconUrl
+                    "IconUrl": coin.iconUrl,
+                    "Day": d.toLocaleDateString(),
+                    "Time": d.toLocaleTimeString() // Add the local time
                 });
 
                 saveToLocalStorage(PersonalData); // Save to localStorage
@@ -112,11 +89,7 @@ function display(data) {
     });
 }
 
-
-
-
 //This function works similar as display function this function take data from local storage and render it on front-end
-
 function pdataShow(data) {
     const Pdiv = document.getElementById('Pdivs');
     Pdiv.innerHTML = ""; // Clear the content before displaying updated data
@@ -141,6 +114,12 @@ function pdataShow(data) {
         const Mcap = document.createElement("h1");
         Mcap.innerHTML = ` Market cap: ${coin.MarketCap}`;
 
+        const dayBook = document.createElement("h1");
+        dayBook.innerHTML = `Day Booked: ${coin.Day}`;
+
+        const timeBook = document.createElement("h1");
+        timeBook.innerHTML = `Time Booked: ${coin.Time}`;
+
         const button = document.createElement("button");
         button.innerHTML = "Remove";
         button.classList.add('Btn');
@@ -148,45 +127,30 @@ function pdataShow(data) {
         button.addEventListener('click', () => {
             deleteItemByName(coin.Name);
 
-        })
+        });
 
         card.appendChild(image);
         card.appendChild(name);
         card.appendChild(price);
         card.appendChild(rank);
         card.appendChild(Mcap);
-        card.appendChild(button)
+        card.appendChild(dayBook); // Add dayBook element
+        card.appendChild(timeBook); // Add timeBook element
+        card.appendChild(button);
 
         Pdiv.appendChild(card);
     });
 }
 
+// Function to delete data from PersonalData or lock data from local storage
+function deleteItemByName(name) {
+    PersonalData = PersonalData.filter(item => item.Name !== name);
+    saveToLocalStorage(PersonalData);
+    pdataShow(PersonalData);
+}
 
-
-
-
-
-
-//this function used button showpdata from front end and onclick render data from local storage
-document.addEventListener('DOMContentLoaded', () => {
-    PersonalData = getFromLocalStorage();
-
-    // Get the button element
-    const showPersonalDataButton = document.getElementById('showPersonalDataButton');
-
-    // Add a click event listener to the button
-    showPersonalDataButton.addEventListener('click', () => {
-        // Call the function to display personal data
-        pdataShow(PersonalData);
-    });
-});
-
-
-
-
-
-// In this function we fetch data and use our display function to render data
-const data = async () => {
+// Main function call which after fetching data render data on front-end
+async function data() {
     try {
         const response = await fetch(url, options);
         const result = await response.json();
@@ -197,42 +161,32 @@ const data = async () => {
     }
 }
 
-
-
-
-// Function to save PersonalData to localStorage
-function saveToLocalStorage(data) {
-    localStorage.setItem('PersonalData', JSON.stringify(data));
-}
-
-
-
-// Function to retrieve PersonalData from localStorage
-function getFromLocalStorage() {
-    const data = localStorage.getItem('PersonalData');
-    return data ? JSON.parse(data) : [];
-}
-
-
-
-
-// Load PersonalData from localStorage on page load
-document.addEventListener('DOMContentLoaded', () => {
-    PersonalData = getFromLocalStorage();
+// Function to scroll to Pdivs
+document.addEventListener('DOMContentLoaded', function () {
+    document.getElementById('watchButton').addEventListener('click', function () {
+        document.getElementById('Pdivs').scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
 });
 
+// Function to scroll to top
+document.addEventListener('DOMContentLoaded', function () {
+    document.getElementById('top').addEventListener('click', function () {
+        document.getElementById('main').scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+});
 
+// Function to show PersonalData
+document.addEventListener('DOMContentLoaded', () => {
+    PersonalData = getFromLocalStorage();
+    const showPersonalDataButton = document.getElementById('showPersonalDataButton');
+    showPersonalDataButton.addEventListener('click', () => {
+        pdataShow(PersonalData);
+    });
+});
 
-
-//this function help us to delete data from our personalData or lock data from local storage
-function deleteItemByName(name) {
-
-    PersonalData = PersonalData.filter(item => item.Name !== name);
-    saveToLocalStorage(PersonalData);
-
-    pdataShow(PersonalData)
-}
-
-
-// Main function call which after fetching data render data on front-end
+// Function to fetch data and display it
 data();
