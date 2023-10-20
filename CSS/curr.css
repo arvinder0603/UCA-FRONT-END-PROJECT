@@ -1,27 +1,29 @@
-
-
 .card {
     border: 1px solid #ccc;
     padding: 10px;
     margin: 10px;
-    background-color: #fff;
+    background-color: #252525;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     width: auto;
     border-radius: 5px;
+    color: #ccc;
 
 }
 
-  body{
+
+
+body {
     background-image: url('Assets\219_generated.jpg');
-background-image: linear-gradient(315deg, #2d3436 0%, #000000 74%);
-  }
+    background-image: linear-gradient(315deg, #2d3436 0%, #000000 74%);
+}
+
 .name {
     font-size: 1.5em;
     margin-bottom: 5px;
 }
 
 .price {
-   font-weight: 700;
+    font-weight: 700;
     font-size: 13px;
     font-weight: 500;
 }
@@ -44,46 +46,51 @@ background-image: linear-gradient(315deg, #2d3436 0%, #000000 74%);
 }
 
 button {
-    
+
     border-radius: 6px;
     font-size: x-large;
     font-weight: 700;
     height: 40px;
     width: 110px;
-    
+
     font-weight: 500;
-    box-shadow: 4px 1px 37px 0px rgba(0,0,0,0.75);
-    -webkit-box-shadow: 4px 1px 37px 0px rgba(0,0,0,0.75);
-    -moz-box-shadow: 4px 1px 37px 0px rgba(0,0,0,0.75);
+    box-shadow: 4px 1px 37px 0px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 4px 1px 37px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 4px 1px 37px 0px rgba(0, 0, 0, 0.75);
 }
 
-.rank{
+.rank {
     font-weight: 700;
     margin-bottom: 6px;
 }
-#tt{
+
+#tt {
+
+    color: #704c60;
+    background-image: -webkit-linear-gradient(45deg, #704c60 0%, #512fba 33%, #ca398d 67%);
+    background-clip: text;
+    -webkit-background-clip: text;
     
-  color: #704c60; background-image: -webkit-linear-gradient(45deg, #704c60 0%, #512fba 33%, #ca398d 67%); background-clip: text; -webkit-background-clip: text; text-fill-color: transparent; -webkit-text-fill-color: transparent;
-  text-shadow: #512fba;
+    -webkit-text-fill-color: transparent;
+    text-shadow: #512fba;
 
 }
 
 
-.Pcard{
+.Pcard {
     border: 1px solid #ccc;
     padding: 10px;
     margin: 10px;
-    background-color: #fff;
+    background-color: #252525;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     width: auto;
     border-radius: 5px;
-  
+    color: aliceblue;
 
 
 }
-.Btn{
-  
+
+.Btn {
+
     margin: 10px;
 }
-
-

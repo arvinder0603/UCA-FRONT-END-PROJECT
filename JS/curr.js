@@ -14,6 +14,10 @@ document.addEventListener('DOMContentLoaded', () => {
     PersonalData = getFromLocalStorage();
 });
 
+
+let PersonalData=[]
+let corpus=[]
+
 //this is main function used for fetching data from rapid api 
 //Fetch method is used in this part for data fetching 
 const url = 'https://coinranking1.p.rapidapi.com/coins?referenceCurrencyUuid=yhjMzLPhuIDl&timePeriod=24h&tiers%5B0%5D=1&orderBy=marketCap&orderDirection=desc&limit=50&offset=0';
@@ -58,6 +62,7 @@ function display(data) {
         button.innerHTML = "Add to watch";
         button.classList.add('button');
 
+
         button.addEventListener('click', () => {
             const exists = PersonalData.some(item => item.Name === coin.name);
             if (!exists) {
@@ -71,13 +76,20 @@ function display(data) {
                     "Day": d.toLocaleDateString(),
                     "Time": d.toLocaleTimeString() // Add the local time
                 });
-
+        
                 saveToLocalStorage(PersonalData); // Save to localStorage
                
                 pdataShow(PersonalData);
+        
+                // Change button color for 1 second
+                button.style.backgroundColor = 'black';
+        
+                setTimeout(function() {
+                    button.style.backgroundColor = ''; // Reset to default color
+                }, 100);
             }
         });
-
+        
         card.appendChild(image);
         card.appendChild(name);
         card.appendChild(price);
